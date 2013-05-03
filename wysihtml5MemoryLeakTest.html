@@ -53,7 +53,8 @@
             
 
             $("#btnRemove").on("click", function () {
-                $("iframe.wysihtml5-sandbox, input[name='_wysihtml5_mode'], #toolbar, #inputNote").remove();
+                $("iframe.wysihtml5-sandbox, input[name='_wysihtml5_mode'], #toolbar").remove();
+                $("#inputNote").show();
                 $("body").removeClass("wysihtml5-supported");
             });
         });
