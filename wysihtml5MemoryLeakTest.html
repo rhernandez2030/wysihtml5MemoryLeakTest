@@ -4,7 +4,7 @@
     <title></title>
 </head>
 <body>
-    <div id="toolbar" style="display: none;">
+    <div id="toolbar">
         <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
         <a data-wysihtml5-command="italic" title="CTRL+I">italic</a>
         <a data-wysihtml5-action="change_view">switch to html view</a>
@@ -54,6 +54,9 @@
 
             $("#btnRemove").on("click", function () {
                 $("iframe.wysihtml5-sandbox, input[name='_wysihtml5_mode'], #toolbar").remove();
+                $("#toolbar").empty();
+                $("#toolbar").append('<a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |<a data-wysihtml5-command="italic" title="CTRL+I">italic</a>| <a data-wysihtml5-action="change_view">switch to html view</a>');
+       
                 $("#inputNote").show();
                 $("body").removeClass("wysihtml5-supported");
             });
